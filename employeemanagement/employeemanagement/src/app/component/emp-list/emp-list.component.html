@@ -1,0 +1,42 @@
+<h1>Employee Table</h1>
+<div class="emptable">
+<table style="background-color: #35393f;" border="1">
+<tr>
+<th>
+    empno   
+</th>
+<th>
+    ename
+</th>
+<th>
+    job  
+</th>
+<th>
+    hiredate  
+</th>
+<th>
+
+    managerId 
+</th>
+<th>
+    salary 
+</th>
+<th>
+    commission   
+</th>
+<th>
+    deptNo 
+</th>
+</tr>
+<tr *ngFor="let employee of employees">
+    <td>{{employee.empno}}</td>
+    <td>{{employee.ename}}</td>
+    <td>{{employee.job}}</td>
+    <td>{{employee.hiredate}}</td>
+    <td>{{employee.managerId}}</td>
+    <td>{{employee.salary}}</td>
+    <td>{{employee.commission}}</td>
+    <td>{{employee.deptNo}}</td>
+</tr>
+</table>
+</div>

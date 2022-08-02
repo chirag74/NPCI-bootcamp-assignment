@@ -1,0 +1,24 @@
+<h1>Department Table</h1>
+<div class="emptable">
+<table style="background-color: #35393f;" border="1">
+<tr>
+<th>
+    deptno  
+</th>
+<th>
+    dname
+</th>
+<th>
+    location  
+</th>
+
+
+</tr>
+<tr *ngFor="let Department of departments">
+    <td>{{Department.deptno}}</td>
+    <td>{{Department.dname}}</td>
+    <td>{{Department.location}}</td>
+ 
+</tr>
+</table>
+</div>

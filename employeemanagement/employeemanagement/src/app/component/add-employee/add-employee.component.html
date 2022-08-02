@@ -1,0 +1,49 @@
+<h1>Add Employee</h1>
+<div class="container mt-5 mb-5">
+    <form #SPForm="ngForm" (ngSubmit)="onSubmit(employeeModel)">
+        <div class="flexit">
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Employee number</label></div>
+            <div class="col-sm-10"> <input type="number" placeholder="employee number" name="empno" [(ngModel)]="employeeModel.empno"> </div>
+        </div>
+        <div class="flexit">
+    
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Employee Name</label></div>
+            <div class="col-sm-10"> <input type="text" placeholder="employee name" name="ename" [(ngModel)]="employeeModel.ename"> </div>
+        </div> <div class="flexit">
+    
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">JOB</label></div>
+            <div class="col-sm-10"> <input type="text" placeholder="JOB" name="job" [(ngModel)]="employeeModel.job"> </div>
+        </div>
+        <div class="flexit">
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Hiredate </label></div>
+            <div class="col-sm-10"> <input type="datetime" placeholder="Hiredate" name="hiredate" [(ngModel)]="employeeModel.hiredate">
+        </div>
+        </div>
+        <div class="flexit">
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Manager Id</label></div>
+            <div class="col-sm-10"> <input type="number" placeholder="managerId" name="managerId" [(ngModel)]="employeeModel.managerId">
+            
+        </div>
+        </div>
+        <div class="flexit">
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Salary</label></div>
+            <div class="col-sm-10"> <input type="number" placeholder="Salary" name="salary" [(ngModel)]="employeeModel.salary">
+            </div>
+        </div>
+        <div class="flexit">
+        
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Commission</label></div>
+            <div class="col-sm-10"> <input type="number" placeholder="commission" name="commission" [(ngModel)]="employeeModel.commission">
+            </div>
+            </div>
+            <div class="flexit">
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Dept Id</label></div>
+            <div class="col-sm-10"> <input type="number" placeholder="Dept Id" name="deptNo" [(ngModel)]="employeeModel.deptNo">
+            </div>
+            </div>
+        <br>
+        <div class="form-group">
+            <div class="col-lm-4"><button class="btn btn-primary" type="submit" >Submit</button></div>
+        </div>
+        </form>
+    </div>

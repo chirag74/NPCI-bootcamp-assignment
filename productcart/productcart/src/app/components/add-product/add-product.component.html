@@ -1,0 +1,64 @@
+<nav class="nav">
+  <div class="container">
+    <div>
+      <ul class="navbar1">
+        <li class="nav1" ><button  (click) = "gotoHome()">Home</button></li>
+        <li class="nav2"  ><button  (click) = "viewProduct()">Products</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <h2 style="text-align: center; font-family:sans-serif;">Add Products</h2> -->
+<div class="container" style="margin-top: 30px;margin-left: 30%;">
+
+<form #productData = "ngForm" (ngSubmit) = "onSubmit()">
+  <div class="flexit">
+    <div><label for="">Product Id</label></div>
+    <div><input type="text" name="id" id=""[(ngModel)] = "product.id"></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">SKU</label></div>
+    <div><input type="text" name="sku" id=""[(ngModel)] = "product.sku"></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">Product Name</label></div>
+    <div><input type="text" name="name" id=""[(ngModel)] = "product.name"></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">Description</label></div>
+    <div><input type="text" name="description" id=""[(ngModel)] = "product.description"></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">Unit Price</label></div>
+    <div><input type="text" name="unitprice" id=""[(ngModel)] = "product.unitprice"></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">Image URL</label></div>
+    <div><input type="text" name="imageurl" id=""[(ngModel)] = "product.imageurl"></div>
+  </div>
+ 
+  <div class="flexit">
+    <div><label for="">Unit In Stock</label></div>
+    <div><input type="text" name="unitinstock" id=""[(ngModel)] = "product.unitinstock"></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">Date Created</label></div>
+    <div><input type="date" name="datecreated" id=""[(ngModel)] = "product.datecreated"></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">Last Updated</label></div>
+    <div><input type="date" name="lastupdated" id=""[(ngModel)] = "product.lastupdated" ></div>
+  </div>
+  <div class="flexit">
+    <div><label for="">Category ID</label></div>
+    <div><select name="category" [(ngModel)] = "product.categoryid" style="width: 300px;">
+      <option value="" selected disabled>Select an Option</option> 
+      <option *ngFor="let category of productCategories" value={{category.categoryid}}>{{category.categoryname}}</option>
+    </select></div>
+  </div>
+  &nbsp;
+  <div class="flexit">
+   <div class="column"><input type="submit" value="Submit" name="submit"></div>
+   </div>
+</form>
+</div>

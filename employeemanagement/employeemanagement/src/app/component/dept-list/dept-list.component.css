@@ -1,0 +1,27 @@
+h1{
+    color: #e9ecf1;
+    text-align: center;
+}
+.emptable{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    text-align: justify;
+    width: 800px;
+
+}
+th{
+    padding: 10px;
+  color: #e9ecf1;
+  font-size: 14px;
+  font-family: sans-serif;  
+}
+td{
+    padding: 10px;
+  color: #e9ecf1;
+    font-size: 13px;
+    font-family: sans-serif;
+}

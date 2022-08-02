@@ -1,0 +1,33 @@
+.container{
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #35393f;
+    height: 50px;
+    box-shadow: 1px 1px 1px 1px black;
+}
+button{
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e9ecf1;
+    background-color: #2d2e35;
+    border: 1px solid #2d2e35;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    cursor: pointer;
+    font-family: sans-serif;
+    padding: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+button:hover{
+    box-shadow: 1px 1px 1px 1px black;
+    letter-spacing: 2px;
+}

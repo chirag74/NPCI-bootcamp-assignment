@@ -1,0 +1,24 @@
+<h1>Add Department</h1>
+<div class="container mt-5 mb-5">
+    <!-- (ngSubmit)="onSubmit(salesPersonModel) -->
+    <form #SPForm="ngForm" (ngSubmit)="onSubmit(deptModel)">
+        <div class="flexit">
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Department number</label></div>
+            <div class="col-sm-10"> <input type="text" placeholder="Department number" name="deptno" [(ngModel)]="deptModel.deptno"> </div>
+        
+    </div>
+    <div class="flexit">
+                <div class="form-group row"> <label class="col-sm-2 col-form-label">Department Name</label></div>
+            <div class="col-sm-10"> <input type="text" placeholder="Department name" name="dname" [(ngModel)]="deptModel.dname"> </div>
+        
+    </div>
+    <div  class="flexit">
+        <div class="form-group row"> <label class="col-sm-2 col-form-label">Location</label></div>
+            <div class="col-sm-10"> <input type="email" placeholder="Location" name="location" [(ngModel)]="deptModel.location"> </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="col-lm-4"><button class="btn btn-primary" type="submit">Submit</button></div>
+        </div>
+        </form>
+    </div>
