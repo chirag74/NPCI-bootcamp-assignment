@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+
+    <style>
+            *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            /* background-color: #EAEDED;  */
+            background-color: white;
+        }
+        .main{
+            padding-top: 30px;
+        
+        }
+
+        nav{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            height: 60px;
+        }
+        .order{
+            display: flex;
+            flex-direction: row;
+        }
+        #left{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+
+        }
+        #left li{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #left li a{
+text-decoration: underline;
+align-items: center;
+color: #fbfbfb;
+font-family: sans-serif;
+font-size: 14px;
+font-weight: bold;
+        }
+        .form-control{
+            height: 30px;
+            width: 290px;
+            /* border-radius:5px ; */
+            outline: none;
+            padding-left: 20px;
+            border-right: none;
+            border: 1px solid white;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+
+        }
+        .butn{
+            width: 90px;
+            height: 30px;
+            background-color: #131921;
+            color: white;
+            outline: none;
+            border: 1px solid white;
+            /* border-radius: 5px; */
+            margin-left: -10px;
+            border-left: none;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .form-control::placeholder{
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+        #form{
+
+
+justify-content: center;
+
+}
+#form form{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 600px;
+    width: 500px;
+    padding: 40px;
+
+}
+#form div{
+    margin-top: 22px;
+  
+    height: 300px;
+    padding-top: 40px;
+}
+#form form label{
+    top: 3%;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+}
+#form form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#form form input::placeholder{
+ font-size: 15px;
+ color: #000;
+ font-weight: bold;
+ padding: 10px;
+ margin: 20px;
+}
+
+#button_anchor{
+    display: flex;
+    color: #000;
+    font-weight: 400;
+    border: 1px solid black;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: sans-serif;
+    align-items: center;
+    background-color: #F3CC6D;
+    
+    justify-content: center;
+}
+#createaccount::before{
+    content:" ";
+    display: block;
+    height: 1px;
+    width: 128px;
+    position: relative;
+    margin-right: 15px;
+    left: 0;
+    background: gray;
+}
+#createaccount{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: gray;
+    font-size: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+
+}
+#createaccount::after{
+    content:" ";
+    display: block;
+    height: 1px;
+    width: 128px;
+    position: relative;
+    margin-left: 15px;
+    left: 0;
+    background: gray;
+}
+#create_your_account{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 30px;
+    text-decoration: underline;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+}
+
+#createform form{
+    display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        height: 890px;
+        width: 500px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        padding-top: 15px;
+}
+#createform div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+        margin-top: -10px;
+      
+        height: 300px;
+        padding-top: 40px;
+    }
+
+    #createform form label{
+        top: 2%;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    #createform form input{
+        width: 100%;
+        height: 40px;
+        border-radius: 2px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        margin-top: 13px;
+        margin-bottom: 20px;
+    }
+    #createform form input::placeholder{
+     font-size: 14px;
+     color: #000;
+     font-weight: bold;
+     padding: 10px;
+     margin: 20px;
+    }
+
+.button_anchor{
+    display: flex;
+    /* margin-left: 90px; */
+    color: #000;
+    font-weight: 400;
+    border: 1px solid black;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    align-items: center;
+    background-color: #FFA41C;
+    
+    justify-content: center;
+    border-radius: 50px;
+    margin-bottom: 20px;
+
+
+}
+.button_cart{
+    display: flex;
+    /* margin-left: 90px; */
+    color: #000;
+    font-weight: 400;
+    border: 1px solid black;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    align-items: center;
+    background-color: #FFD814;
+
+    
+    justify-content: center;
+    border-radius: 50px;
+margin-bottom: 20px;
+margin-top: 10px;
+}
+.button_now{
+    display: flex;
+    /* margin-left: 90px; */
+    color: #000;
+    font-weight: 400;
+    border: 1px solid black;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    align-items: center;
+    background-color: #FFA41C;
+
+    
+    justify-content: center;
+    border-radius: 50px;
+margin-bottom: 20px;
+margin-top: 10px;
+}
+#createform #createaccount::before{
+    content:" ";
+    display: block;
+    height: 1px;
+    width: 110px;
+    position: relative;
+    margin-right: 19px;
+    left: 0;
+    background: gray;
+}
+#createform #createaccount{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: gray;
+    font-size: 11px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+
+}
+#createform #createaccount::after{
+    content:" ";
+    display: block;
+    height: 1px;
+    width: 110px;
+    position: relative;
+    margin-left: 19px;
+    left: 0;
+    background: gray;
+}
+#createform #create_your_account{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+}
+#banner_container{
+    margin-bottom: 80px;
+}
+#banner{
+    
+    max-width: 700px;
+    margin: 0 auto;
+    height: 50px;
+    bottom: 50px;
+    /* border: 2px solid black; */
+
+
+}
+
+#banner img{
+    margin-bottom: 50px;
+}
+#details_container{
+    /* border: 2px solid black; */
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 700px;
+
+
+}
+#left_container{
+    /* border: 2px solid black; */
+    width: 59%;
+    /* padding-left: 400px; */
+    padding-top: 50px;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+#list{
+    display: flex;
+    flex-direction: column;
+}
+#list ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    margin-top: 50px;
+
+}
+#list ul li{
+    margin-top: 10px;
+    border: 1px solid black;
+    width: 42px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#list ul li img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+#list ul li:hover{
+    border:1px solid #E47911;
+}
+#right_container{
+    /* border: 2px solid black; */
+    width: 41%;
+}
+#right_details{
+    display: flex;
+    flex-direction: column;
+
+}
+#right_details #details_heading{
+    font-family: sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 10px;
+}
+#store{
+    text-decoration: none;
+    color: #077488;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+#rating{
+    text-decoration: none;
+    color: #077488;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+#price{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-size: 28px;
+}
+#price span{
+    color: #CC0C39;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+#tax{
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 7px;
+
+}
+#size{
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#sizes{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid black; */
+    
+}
+.ram{
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    border: 1px solid black;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.ram:hover{
+border: 1px solid #E47911;
+}
+#table_details{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#table_details tr{
+    text-align: left;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <nav style="background-color: #000;" >
+        <div>
+
+        <img class="nav-brand" src ="https://i0.wp.com/www.dafontfree.co/wp-content/uploads/2021/11/Amazon-Logo-Font-1-scaled.jpg?fit=2560%2C1578&ssl=1" height="35px" width="90px" /> 
+        </div>
+        <div class="order">
+        <ul class="nav-bar nav" id="left" >
+        <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
+        <li class="nav-item"> <a class="nav-link" href="./electronics.html">Electronics</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Home Appliance</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Fashion</a></li>
+        </ul>
+        </div>
+        <div>
+        <form class="d-flex" style="padding-right:60px;">
+
+        <input type="Search" name="search_name" class="form-control col-sm-4" placeholder="Search Item"/>
+        <input type="submit" name="search" value="Search" class="butn"/>
+        
+        </form>
+        </div>
+        <div>
+            <ul class="nav-bar nav" id="left" >
+                <li class="nav-item"><a  target="_blank" class="nav-link" href="./Login.html" data-bs-target="#modaldata" data-bs-toggle="modal">Login</a></li>
+                <li class="nav-item"> <a target="_blank" class="nav-link" href="./Createaccount.html" data-bs-target="#create" data-bs-toggle="modal">Create Account</a></li>
+                
+                </ul>
+        </div>
+        </nav>
+
+      
+        </div>
+        <div id="banner_container">
+        <div id="banner">
+
+            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/Meghana/iQOO/ILMMM/D49588381_WLD_ILM_BAU_-_Design_SIM_Design-SIM_ILM_640x45_2._CB631470225_.jpg" height="50px" width="700px"/>
+                    </div>
+                    </div>
+
+                    <div id="details_container">
+                        <div id="left_container">
+                            <div id="list">
+                                <ul>
+                                    <li><img src="https://m.media-amazon.com/images/I/71YDOppqAzL._SL1500_.jpg"></li>
+                                    <li><img src="https://m.media-amazon.com/images/I/71YDOppqAzL._SL1500_.jpg"></li>
+                                    <li><img src="https://m.media-amazon.com/images/I/71YDOppqAzL._SL1500_.jpg"></li>
+                                    <li><img src="https://m.media-amazon.com/images/I/71YDOppqAzL._SL1500_.jpg"></li>
+                                    <li><img src="https://m.media-amazon.com/images/I/71YDOppqAzL._SL1500_.jpg"></li>
+
+
+                             
+                                
+
+
+                                </ul>
+                            </div>
+<img src="https://m.media-amazon.com/images/I/71YDOppqAzL._SL1500_.jpg" height="550px">
+                        </div>
+                        <div id="right_container">
+                            <div id="right_details">
+                                <p id="details_heading">Redmi 126 cm (50 inches) 4K Ultra HD Android Smart LED TV X50 | L50M6-RA (Black) </p>
+                                <a href="" id="store"> visit Redmi Store</a>
+                                <a href="" id="rating">7,899 ratings | 1000+ answered questions</a>
+                                <hr style="color: gray; height:1px; width:600px">
+                                <p id="price"><span>-28%</span>&nbsp;<sup>&#8377;</sup>28,999</p>
+                                <p id="tax">Inclusive all taxes</p>
+                                <hr style="color: gray; height:1px; width:600px">
+                                <p id="size"> Size name: <b>6GB RAM & 128GB</b> </p>
+                                <div id="sizes">
+                                    <a class="ram">4 GB Ram & 64 GB</a>
+                                    <a class="ram">6 GB Ram & 128 GB</a>
+                                </div>
+                                <table id="table_details">
+                                    <h2 style="margin-top: 20px;">Details</h2>
+                                    <tr>
+                                        <th>Brand</th>
+                                        <td> Samsung</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Model Number</th>
+                                        <td>M325F</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Device interface </th>
+                                        <td>Touchscreen</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Network Service </th>
+                                        <td>Unlocked for All Carriers</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Cellular Technology</th>
+                                        <td>4G</td>
+                                    </tr>
+                                </table>
+                                <a href="" class="button_cart">
+
+                                    Add To Cart
+                                    </a>
+                                <a href="" class="button_now">
+
+                                    Buy Now
+                                    </a>
+                          
+
+
+                            </div>
+                            </div>
+                    </div>
+
+
+
+
+
+
+
+                    
+
+
+</body>
+</html>
