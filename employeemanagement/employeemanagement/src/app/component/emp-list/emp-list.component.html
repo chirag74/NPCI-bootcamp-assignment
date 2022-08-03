@@ -27,6 +27,9 @@
 <th>
     deptNo 
 </th>
+<th>
+    Action
+</th>
 </tr>
 <tr *ngFor="let employee of employees">
     <td>{{employee.empno}}</td>
@@ -37,6 +40,12 @@
     <td>{{employee.salary}}</td>
     <td>{{employee.commission}}</td>
     <td>{{employee.deptNo}}</td>
+    <td>
+        &nbsp;
+        <button type="submit" class="btn btn-sm btn-info" style="background-color: #2d2e35; color: #e9ecf1; font-family: sans-serif;" >update</button>
+        &nbsp;
+        <button type="submit" class="btn btn-sm btn-info" style="background-color:#2d2e35; color:#e9ecf1;font-family: sans-serif;">Delete</button>
+    </td>
 </tr>
 </table>
 </div>
