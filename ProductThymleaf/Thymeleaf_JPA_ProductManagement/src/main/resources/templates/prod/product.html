@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang ="en" xlmns : th = "https://www.thymeleaf.org/" >
+	<head>
+		<title>Product List</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	</head>
+	<body style = "margin-top: 7%;">
+		<div class = "container">
+		&nbsp;
+		<div class = "row">
+		<div class = "col"><a th:href = "@{/product/addProd}" class = "btn btn-dark">Add Product</a></div>
+		<div class = "col"><form th:action = "@{/product/search}" class = "form-inline">
+<input class = "form-control ml-5 mr-sm-2 mb-3" type = "search" name = "productName" placeholder = "Search by Product Name">
+
+		<button class = "btn btn-secondary mb-3" type = "submit">Search Product</button></form>
+		</div>
+		
+		<div class = "col"><form th:action = "@{/product/searchid}" class = "form-inline">
+<input class = "form-control ml-5 mr-sm-2 mb-3" type = "search" name = "CategoryID" placeholder = "Search by Category Id">
+
+		<button class = "btn btn-secondary mb-3" type = "submit">Search Product</button></form>
+		</div>
+		</div>&nbsp;
+			<table class = "table table-bordered" style="background-color: #BEBEBE;">
+				<tr>
+					<th>ID</th>
+					<th>Product SKU</th>
+					<th>Product Name</th>
+					<th>Description</th>
+					<th>Unit Price</th>
+					<th>Image URL</th>
+					<th>Units In Stock</th>
+					<th>Date Created</th>
+					<th>Last Updated</th>
+					<th>Category ID</th>
+					<th>Action</th>
+				</tr>
+				<tr th:each = "temp : ${PRODUCT}">
+					<td th:text = "${temp.id}"></td>
+					<td th:text = "${temp.sku}"></td>
+					<td th:text = "${temp.name}"></td>
+					<td th:text = "${temp.description}"></td>
+					<td th:text = "${temp.unitprice}"></td>
+					<td th:text = "${temp.imageurl}"></td>
+					<td th:text = "${temp.unitsinstock}"></td>
+					<td th:text = "${temp.datecreated}"></td>
+					<td th:text = "${temp.lastupdated}"></td>
+					<td th:text = "${temp.categoryid}"></td>
+					<td><a th:href = "@{/product/updateForm(id = ${temp.id})}" class = "btn btn-dark">Update</a> &nbsp;<br><br>
+					<a class = "btn btn-dark" th:href = "@{/product/delete(id = ${temp.id})}" 
+					onclick = "if(!(confirm('Do you want to delete the Product'))) return false">Delete</a></td>
+				</tr>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+</head>
+<body style="margin-top: 7%;">
+    <div class="container-fluid">
+    	&nbsp;
+		<div><a th:href = "@{/product/list}" class = "btn btn-dark">Product List</a>
+		</div>&nbsp;
+
+        <form action="" class="form" th:action = "@{/product/save}" th:object = "${PRODUCT}" method = "POST">
+        <h2>Product Data</h2>
+             <div class="row">
+             	<div class="col-sm-3">
+                    <label for="" class="col-form-label">Product ID</label>
+                </div>
+             	<div class="col-sm-3">
+                    <input type="text" name="id" id="" th:field = "*{id}" value = 0>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Product SKU</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="productSku" th:field = "*{sku}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Product Name</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="name" th:field = "*{name}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Description</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="description" th:field = "*{description}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Unit Price</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="unitprice" th:field = "*{unitprice}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Image URL</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="imageurl" th:field = "*{imageurl}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Units In Stock</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" name="unitsinstock" th:field = "*{unitsinstock}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Created On</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="date" name="datecreated" th:field = "*{datecreated}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Last Updated On</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="date" name="lastupdated" th:field = "*{lastupdated}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="" class="col-form-label">Category</label>
+                </div>
+                <div class="col-sm-3">
+                    <select name="categoryid" th:field = "*{categoryid}">
+                        <option value="1101">Cereal grain</option>
+                        <option value="1102">Vehicle</option>
+                        <option value="1103">Radio wave</option>
+                    </select>
+                </div>
+            </div>
+            &nbsp;
+            <div class="row">
+                <div class="col-sm-2">
+                    <input type="submit" value="Submit" name = "submit" class = "btn btn-lg btn-dark">
+                </div>
+                <div class="col-sm-4">
+                    <input type="reset" value="Reset" name = "reset" class = "btn btn-lg btn-dark">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
